@@ -1,1 +1,384 @@
 
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADEFALA JOSEPH | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600&amp;display=swap');
+        :root {
+            --accent: 234 179 8;
+        }     
+        body {
+            font-family: 'Inter', system_ui, sans-serif;
+        } 
+        .heading-font {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        .hero-bg {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+        }
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-hover:hover {
+            transform: translateY(-12px) scale(1.03);
+            box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.4);
+        }
+        .nav-link {
+            position: relative;
+        }
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: rgb(234 179 8);
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover:after {
+            width: 100%;
+        }
+        .skill-icon {
+            transition: transform 0.3s ease;
+        }
+        .skill-card:hover .skill-icon {
+            transform: rotate(12deg) scale(1.15);
+        }
+        @media print {
+            nav, .no-print { display: none !important; }
+            .hero-bg { background: white !important; color: black !important; }
+            .print-only { display: block !important; }
+        }
+    </style>
+</head>
+<body class="bg-zinc-950 text-white overflow-x-hidden">
+    <!-- NAVBAR -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-zinc-950/80 backdrop-blur-lg border-b border-zinc-800">
+        <div class="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-9 h-9 bg-yellow-400 rounded-2xl flex items-center justify-center text-zinc-950 font-bold text-2xl heading-font">AJ</div>
+                <span class="font-semibold text-2xl heading-font tracking-tighter">ADEFALA JOSEPH</span>
+            </div>
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center gap-10 text-sm font-medium">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="#" onclick="window.print(); return false;" 
+                   class="no-print px-6 py-2.5 bg-white text-zinc-950 font-semibold rounded-2xl flex items-center gap-2 hover:bg-yellow-400 transition-colors text-sm">
+                    <i class="fa-solid fa-download"></i>
+                    <span>Save PDF</span>
+                </a>      
+                <!-- Mobile Hamburger -->
+                <button id="mobile-menu-btn"
+                        class="md:hidden w-11 h-11 flex items-center justify-center text-2xl">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-zinc-950 border-t border-zinc-800 px-6 py-8">
+            <div class="flex flex-col gap-6 text-lg font-medium">
+                <a href="#about" onclick="toggleMobileMenu()" class="nav-link">About</a>
+                <a href="#skills" onclick="toggleMobileMenu()" class="nav-link">Skills</a>
+                <a href="#projects" onclick="toggleMobileMenu()" class="nav-link">Projects</a>
+                <a href="#contact" onclick="toggleMobileMenu()" class="nav-link">Contact</a>
+            </div>
+        </div>
+    </nav>
+    <!-- HERO -->
+    <header class="hero-bg min-h-screen flex items-center pt-20">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+            <div class="space-y-8">
+                <div class="inline-flex items-center gap-3 bg-zinc-900 text-yellow-400 text-sm font-medium px-6 py-3 rounded-3xl border border-yellow-400/30">
+                    <div class="w-2 h-2 bg-yellow-400 rounded-full animate-pulse"></div>
+                    Ogun State, Nigeria
+                </div> 
+                <h1 class="text-6xl md:text-7xl font-bold heading-font tracking-tighter leading-none">
+                    ADEFALA<br>JOSEPH
+                </h1>
+                <p class="text-3xl text-yellow-400 font-medium heading-font">Aspiring Website &amp; App Creator</p>             
+                <p class="max-w-md text-zinc-400 text-lg leading-relaxed">
+                    I help business owners and individuals get beautiful, functional websites and mobile apps made exactly to their taste.
+                </p>                
+                <div class="flex flex-wrap gap-4">
+                    <a href="#contact" 
+                       class="px-8 py-4 bg-yellow-400 hover:bg-yellow-300 transition-all text-zinc-950 font-semibold rounded-3xl flex items-center gap-3 text-lg">
+                        Let's Build Together
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>                    
+                    <a href="#" onclick="window.print(); return false;" 
+                       class="no-print px-8 py-4 border border-white/50 hover:border-yellow-400 transition-all rounded-3xl flex items-center gap-3">
+                        <i class="fa-solid fa-file-pdf"></i>
+                        Save Portfolio PDF
+                    </a>
+                </div>                
+                <div class="flex items-center gap-8 pt-8">
+                    <a href="https://www.tiktok.com/@josephgamingstore" target="_blank"
+                       class="flex items-center gap-3 hover:text-yellow-400 transition-colors">
+                        <i class="fa-brands fa-tiktok text-3xl"></i>
+                        <div>
+                            <div class="text-xs text-zinc-500">TIKTOK</div>
+                            <div class="font-medium">@josephgamingstore</div>
+                        </div>
+                    </a>                    
+                    <a href="https://wa.me/2347044779329" target="_blank"
+                       class="flex items-center gap-3 hover:text-yellow-400 transition-colors">
+                        <i class="fa-brands fa-whatsapp text-3xl"></i>
+                        <div>
+                            <div class="text-xs text-zinc-500">WHATSAPP</div>
+                            <div class="font-medium">+234 704 477 9329</div>
+                        </div>
+                    </a>
+                </div>
+            </div>            
+            <!-- Profile Visual -->
+            <div class="relative flex justify-center md:justify-end">
+                <div class="relative">
+                    <div class="absolute -inset-6 bg-gradient-to-br from-yellow-400/20 to-transparent rounded-[4rem] rotate-6"></div>
+                    <img src="https://picsum.photos/id/1011/520/520" 
+                         alt="Adefala Joseph"
+                         class="w-80 md:w-96 rounded-3xl shadow-2xl border-8 border-zinc-900 relative z-10 object-cover">                    
+                    <!-- Status badge -->
+                    <div class="absolute -bottom-4 right-8 bg-zinc-900 border border-yellow-400 text-yellow-400 text-xs font-medium px-6 py-3 rounded-3xl flex items-center gap-2 shadow-xl">
+                        <i class="fa-solid fa-circle text-green-400 animate-pulse"></i>
+                        AVAILABLE FOR PROJECTS
+                    </div>
+                </div>
+            </div>
+        </div>        
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-10 left-1/2 hidden md:flex flex-col items-center gap-2 text-xs tracking-widest text-zinc-500">
+            <div>SCROLL TO EXPLORE</div>
+            <i class="fa-solid fa-chevron-down animate-bounce"></i>
+        </div>
+    </header>
+    <!-- ABOUT -->
+    <section id="about" class="max-w-7xl mx-auto px-6 py-28">
+        <div class="grid md:grid-cols-12 gap-16 items-center">
+            <div class="md:col-span-7">
+                <div class="uppercase text-yellow-400 text-sm font-medium tracking-widest mb-4">CHAPTER 01 — ABOUT ME</div>
+                <h2 class="text-5xl heading-font font-semibold tracking-tighter leading-none mb-10">
+                    A 16-year-old boy with big dreams<br>of building the future.
+                </h2>
+                <div class="prose prose-invert text-xl text-zinc-300 max-w-none">
+                    <p class="mb-6">
+                        Hi, I'm Adefala Joseph — a passionate self-taught developer from Ogun State, Nigeria.
+                    </p>
+                    <p>
+                        I aspire to develop myself every single day and help people (especially business owners and individuals) 
+                        get websites and applications that are not just functional, but perfectly tailored to their taste and needs.
+                    </p>
+                </div>
+            </div>            
+            <div class="md:col-span-5 bg-zinc-900 p-10 rounded-3xl">
+                <div class="space-y-8">
+                    <div>
+                        <div class="text-xs text-zinc-500 mb-1">CURRENTLY LEARNING</div>
+                        <div class="text-2xl font-medium">JavaScript • React • Mobile App Development</div>
+                    </div>
+                    <div class="h-px bg-zinc-800"></div>
+                    <div>
+                        <div class="text-xs text-zinc-500 mb-3">MY PROMISE TO YOU</div>
+                        <ul class="space-y-4 text-zinc-400">
+                            <li class="flex gap-3">
+                                <i class="fa-solid fa-check text-yellow-400 mt-1"></i>
+                                Clean, modern &amp; responsive design
+                            </li>
+                            <li class="flex gap-3">
+                                <i class="fa-solid fa-check text-yellow-400 mt-1"></i>
+                                Fast loading &amp; mobile-friendly
+                            </li>
+                            <li class="flex gap-3">
+                                <i class="fa-solid fa-check text-yellow-400 mt-1"></i>
+                                100% custom to your brand
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- SKILLS -->
+    <section id="skills" class="bg-zinc-900 py-28">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="uppercase text-yellow-400 text-sm font-medium tracking-widest mb-6 text-center">CHAPTER 02 — WHAT I BRING</div>
+            <h2 class="text-5xl heading-font font-semibold tracking-tighter text-center mb-16">Skills &amp; Tools</h2>            
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
+                <!-- Skill 1 -->
+                <div class="skill-card bg-zinc-950 border border-zinc-800 rounded-3xl p-8 card-hover">
+                    <div class="skill-icon text-6xl mb-6">🌐</div>
+                    <div class="text-2xl font-semibold mb-2">HTML &amp; CSS</div>
+                    <div class="text-zinc-400">Modern, responsive, pixel-perfect websites</div>
+                </div>                
+                <!-- Skill 2 -->
+                <div class="skill-card bg-zinc-950 border border-zinc-800 rounded-3xl p-8 card-hover">
+                    <div class="skill-icon text-6xl mb-6">🎨</div>
+                    <div class="text-2xl font-semibold mb-2">Graphic Design</div>
+                    <div class="text-zinc-400">Logos, banners &amp; visual assets that stand out</div>
+                </div>                
+                <!-- Skill 3 -->
+                <div class="skill-card bg-zinc-950 border border-zinc-800 rounded-3xl p-8 card-hover">
+                    <div class="skill-icon text-6xl mb-6">💻</div>
+                    <div class="text-2xl font-semibold mb-2">Software Engineering</div>
+                    <div class="text-zinc-400">Clean code, logic &amp; functional applications</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- PROJECTS -->
+    <section id="projects" class="max-w-7xl mx-auto px-6 py-28">
+        <div class="uppercase text-yellow-400 text-sm font-medium tracking-widest mb-6">CHAPTER 03 — WORK</div>
+        <h2 class="text-5xl heading-font font-semibold tracking-tighter mb-4">Recent Creations</h2>
+        <p class="text-zinc-400 max-w-md mb-16">Even as an aspiring developer, I've already built real projects that solve problems.</p>        
+        <div class="grid md:grid-cols-2 gap-8">
+            <!-- Project 1 -->
+            <div class="bg-zinc-900 rounded-3xl overflow-hidden card-hover">
+                <div class="h-64 bg-zinc-800 flex items-center justify-center relative">
+                    <div class="text-8xl opacity-20">🧮</div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-zinc-900 via-transparent"></div>
+                    <div class="absolute bottom-6 left-6 bg-black/70 px-5 py-1 rounded-2xl text-xs tracking-wider">2025</div>
+                </div>
+                <div class="p-8">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="text-2xl font-semibold mb-2">Interactive Calculator App</h3>
+                            <div class="flex gap-2">
+                                <span class="text-xs bg-yellow-400/10 text-yellow-400 px-3 py-1 rounded-xl">HTML</span>
+                                <span class="text-xs bg-yellow-400/10 text-yellow-400 px-3 py-1 rounded-xl">CSS</span>
+                                <span class="text-xs bg-yellow-400/10 text-yellow-400 px-3 py-1 rounded-xl">JS</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="mt-6 text-zinc-400 leading-relaxed">
+                        A fully functional calculator with dark mode, history, and smooth animations. Built from scratch with pure JavaScript.
+                    </p>
+                    <a href="#" onclick="alert('Demo coming soon! Contact me on WhatsApp to see the live version 😊');" 
+                       class="mt-8 inline-flex items-center gap-3 text-sm font-medium group">
+                        VIEW PROJECT 
+                        <span class="group-hover:translate-x-2 transition">→</span>
+                    </a>
+                </div>
+            </div>            
+            <!-- Project 2 -->
+            <div class="bg-zinc-900 rounded-3xl overflow-hidden card-hover">
+                <div class="h-64 bg-zinc-800 flex items-center justify-center relative">
+                    <div class="text-8xl opacity-20">💼</div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-zinc-900 via-transparent"></div>
+                    <div class="absolute bottom-6 left-6 bg-black/70 px-5 py-1 rounded-2xl text-xs tracking-wider">2025</div>
+                </div>
+                <div class="p-8">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3 class="text-2xl font-semibold mb-2">Office &amp; Portfolio Websites</h3>
+                            <div class="flex gap-2">
+                                <span class="text-xs bg-yellow-400/10 text-yellow-400 px-3 py-1 rounded-xl">Tailwind</span>
+                                <span class="text-xs bg-yellow-400/10 text-yellow-400 px-3 py-1 rounded-xl">Responsive</span>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="mt-6 text-zinc-400 leading-relaxed">
+                        Multiple clean, professional websites for offices and personal portfolios — fast, mobile-first and beautiful.
+                    </p>
+                    <a href="#" onclick="alert('Demo coming soon! Contact me on WhatsApp to see the live version 😊');" 
+                       class="mt-8 inline-flex items-center gap-3 text-sm font-medium group">
+                        VIEW PROJECT 
+                        <span class="group-hover:translate-x-2 transition">→</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- CONTACT -->
+    <section id="contact" class="bg-zinc-900 py-28">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <div class="uppercase text-yellow-400 text-sm font-medium tracking-widest mb-6">CHAPTER 04 — LET'S TALK</div>
+            <h2 class="text-6xl heading-font font-semibold tracking-tighter mb-8">
+                Ready to bring your idea to life?
+            </h2>
+            <p class="text-2xl text-zinc-400 mb-12 max-w-md mx-auto">
+                Whether it's a business website, a personal app, or just a quick chat — I'm only one message away.
+            </p>            
+            <div class="flex flex-col md:flex-row gap-6 justify-center">
+                <!-- WhatsApp -->
+                <a href="https://wa.me/2347044779329?text=Hi%20Joseph%2C%20I%20saw%20your%20portfolio%20and%20would%20love%20to%20work%20together!"
+                   target="_blank"
+                   class="group bg-green-600 hover:bg-green-500 transition-all text-white px-12 py-6 rounded-3xl flex items-center justify-center gap-4 text-xl font-medium">
+                    <i class="fa-brands fa-whatsapp text-4xl"></i>
+                    <div class="text-left">
+                        <div class="text-sm opacity-75">Message me instantly</div>
+                        <div>WhatsApp +234 704 477 9329</div>
+                    </div>
+                </a>                
+                <!-- Email -->
+                <a href="mailto:josephadefala01@gmail.com?subject=Portfolio%20Inquiry"
+                   class="group bg-zinc-800 hover:bg-zinc-700 transition-all px-12 py-6 rounded-3xl flex items-center justify-center gap-4 text-xl font-medium">
+                    <i class="fa-solid fa-envelope text-4xl"></i>
+                    <div class="text-left">
+                        <div class="text-sm opacity-75">Send me an email</div>
+                        <div>josephadefala01@gmail.com</div>
+                    </div>
+                </a>
+            </div>            
+            <div class="mt-16 text-xs text-zinc-500">
+                TikTok: @josephgamingstore • Phone: 0704 477 9329
+            </div>
+        </div>
+    </section>
+    <!-- FOOTER -->
+    <footer class="bg-black py-16 border-t border-zinc-800">
+        <div class="max-w-7xl mx-auto px-6 text-center text-zinc-500 text-sm">
+            <div class="flex justify-center gap-8 text-2xl mb-6">
+                <a href="https://www.tiktok.com/@josephgamingstore" target="_blank" class="hover:text-yellow-400"><i class="fa-brands fa-tiktok"></i></a>
+                <a href="https://wa.me/2347044779329" target="_blank" class="hover:text-yellow-400"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="mailto:josephadefala01@gmail.com" class="hover:text-yellow-400"><i class="fa-solid fa-envelope"></i></a>
+            </div>
+            <p>Made with ❤️ in Ogun State, Nigeria • © 2025 Adefala Joseph</p>
+            <p class="mt-2 text-[10px]">Single-file portfolio • Hosted on GitHub Pages</p>
+        </div>
+    </footer>
+    <script>
+        // Tailwind script already loaded via CDN        
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }        
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        mobileBtn.addEventListener('click', toggleMobileMenu);        
+        // Smooth scroll for anchor links        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                if (this.getAttribute('href') === '#') return;
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });        
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('mobile-menu').classList.add('hidden');
+            });
+        });        
+        // Keyboard escape for mobile menu
+        document.addEventListener('keydown', function(e) {
+            if (e.key === "Escape") {
+                document.getElementById('mobile-menu').classList.add('hidden');
+            }
+        });       
+        // Print message
+        console.log('%c✅ Portfolio ready! Just upload to GitHub and enable Pages.', 'color:#eab308; font-size:13px');
+    </script>
+</body>
+</html>
